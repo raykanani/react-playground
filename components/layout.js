@@ -3,8 +3,8 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
-const name = 'Ray Kanani'
-export const siteTitle = 'Next.js Sample Website'
+const name = 'Ask Nana Anything'
+export const siteTitle = 'Ask Nana Anything'
 
 const Layout = ({children, home}) => (
     <div className={styles.container}>
@@ -12,7 +12,7 @@ const Layout = ({children, home}) => (
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Ask Nana Anything"
         />
         <meta
           property="og:image"
@@ -27,7 +27,7 @@ const Layout = ({children, home}) => (
         {home ? (
           <>
             <img
-              src="/images/profile.jpg"
+              src="/images/nana.png"
               className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
               alt={name}
             />

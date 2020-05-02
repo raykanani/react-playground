@@ -27,10 +27,6 @@
     "/index": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/posts/first-post": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }
