@@ -67,7 +67,9 @@ var siteTitle = 'Ask Nana Anything';
 
 var Layout = function Layout(_ref) {
   var children = _ref.children,
-      home = _ref.home;
+      home = _ref.home,
+      nextQuestion = _ref.nextQuestion,
+      prevQuestion = _ref.prevQuestion;
   return __jsx("div", {
     className: _layout_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.container,
     __self: _this,
@@ -170,7 +172,7 @@ var Layout = function Layout(_ref) {
       columnNumber: 15
     }
   }, __jsx("img", {
-    src: "/images/profile.jpg",
+    src: "/images/nana.png",
     className: "".concat(_layout_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.headerImage, " ").concat(_styles_utils_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.borderCircle),
     alt: name,
     __self: _this,
@@ -211,29 +213,46 @@ var Layout = function Layout(_ref) {
       columnNumber: 7
     }
   }, children), !home && __jsx("div", {
-    className: _layout_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.backToHome,
+    className: _layout_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navigation,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 57,
       columnNumber: 9
     }
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: "/",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58,
-      columnNumber: 11
-    }
-  }, __jsx("a", {
+  }, prevQuestion && prevQuestion !== undefined && prevQuestion.title !== undefined && __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/posts/[id]",
+    as: "/posts/".concat(prevQuestion.id),
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 59,
       columnNumber: 13
     }
-  }, "\u2190 Back to home"))));
+  }, __jsx("a", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60,
+      columnNumber: 15
+    }
+  }, " \u2190 ", prevQuestion.title)), nextQuestion && nextQuestion !== undefined && nextQuestion.title !== undefined && __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/posts/[id]",
+    as: "/posts/".concat(nextQuestion.id),
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64,
+      columnNumber: 13
+    }
+  }, __jsx("a", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 15
+    }
+  }, nextQuestion.title, " \u2192 "))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -790,14 +809,15 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".layout_container__2t4v2 {\n    max-width: 36rem;\n    padding: 0 1rem;\n    margin: 3rem auto 6rem;\n  }\n  \n  .layout_header__2rhWq {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n  }\n  \n  .layout_headerImage__2h5On {\n    width: 6rem;\n    height: 6rem;\n  }\n  \n  .layout_headerHomeImage__3qo1_ {\n    width: 6rem;\n    height: auto;\n  }\n  \n  .layout_backToHome__1vZsp {\n    margin: 3rem 0 0;\n  }", "",{"version":3,"sources":["/Users/raykanani/Documents/GitHub/react-playground/components/layout.module.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,eAAe;IACf,sBAAsB;EACxB;;EAEA;IACE,aAAa;IACb,sBAAsB;IACtB,mBAAmB;EACrB;;EAEA;IACE,WAAW;IACX,YAAY;EACd;;EAEA;IACE,WAAW;IACX,YAAY;EACd;;EAEA;IACE,gBAAgB;EAClB","file":"layout.module.css","sourcesContent":[".container {\n    max-width: 36rem;\n    padding: 0 1rem;\n    margin: 3rem auto 6rem;\n  }\n  \n  .header {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n  }\n  \n  .headerImage {\n    width: 6rem;\n    height: 6rem;\n  }\n  \n  .headerHomeImage {\n    width: 6rem;\n    height: auto;\n  }\n  \n  .backToHome {\n    margin: 3rem 0 0;\n  }"]}]);
+exports.push([module.i, ".layout_container__2t4v2 {\n    max-width: 36rem;\n    padding: 0 1rem;\n    margin: 3rem auto 6rem;\n  }\n  \n  .layout_header__2rhWq {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n  }\n  \n  .layout_headerImage__2h5On {\n    width: 4rem;\n    height: auto;\n  }\n  \n  .layout_headerHomeImage__3qo1_ {\n    width: 6rem;\n    height: auto;\n  }\n  \n  .layout_backToHome__1vZsp {\n    margin: 3rem 0 0;\n  }\n\n  .layout_navigation__3UpwS {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin: 3rem 0 0;\n  }", "",{"version":3,"sources":["/Users/raykanani/Documents/GitHub/react-playground/components/layout.module.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,eAAe;IACf,sBAAsB;EACxB;;EAEA;IACE,aAAa;IACb,sBAAsB;IACtB,mBAAmB;EACrB;;EAEA;IACE,WAAW;IACX,YAAY;EACd;;EAEA;IACE,WAAW;IACX,YAAY;EACd;;EAEA;IACE,gBAAgB;EAClB;;EAEA;IACE,aAAa;IACb,mBAAmB;IACnB,8BAA8B;IAC9B,gBAAgB;EAClB","file":"layout.module.css","sourcesContent":[".container {\n    max-width: 36rem;\n    padding: 0 1rem;\n    margin: 3rem auto 6rem;\n  }\n  \n  .header {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n  }\n  \n  .headerImage {\n    width: 4rem;\n    height: auto;\n  }\n  \n  .headerHomeImage {\n    width: 6rem;\n    height: auto;\n  }\n  \n  .backToHome {\n    margin: 3rem 0 0;\n  }\n\n  .navigation {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    margin: 3rem 0 0;\n  }"]}]);
 // Exports
 exports.locals = {
 	"container": "layout_container__2t4v2",
 	"header": "layout_header__2rhWq",
 	"headerImage": "layout_headerImage__2h5On",
 	"headerHomeImage": "layout_headerHomeImage__3qo1_",
-	"backToHome": "layout_backToHome__1vZsp"
+	"backToHome": "layout_backToHome__1vZsp",
+	"navigation": "layout_navigation__3UpwS"
 };
 
 /***/ }),
@@ -811,7 +831,7 @@ exports.locals = {
 
 exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, ".utils_heading2Xl__1I65m {\n    font-size: 2.5rem;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n  }\n  \n  .utils_headingXl__1XecN {\n    font-size: 2rem;\n    line-height: 1.3;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n  }\n  \n  .utils_headingLg__de7p0 {\n    font-size: 1.5rem;\n    line-height: 1.4;\n    margin: 1rem 0;\n  }\n  \n  .utils_headingMd__3de6G {\n    font-size: 1.2rem;\n    line-height: 1.5;\n  }\n  \n  .utils_borderCircle__13qdJ {\n    border-radius: 9999px;\n  }\n  \n  .utils_colorInherit__3Gudf {\n    color: inherit;\n  }\n  \n  .utils_padding1px__oCny8 {\n    padding-top: 1px;\n  }\n  \n  .utils_list__S7_pe {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n  }\n  \n  .utils_listItem__2eJpJ {\n    margin: 0 0 1.25rem;\n  }\n  \n  .utils_lightText__12Ckm {\n    color: #999;\n  }", "",{"version":3,"sources":["/Users/raykanani/Documents/GitHub/react-playground/styles/utils.module.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;IACjB,gBAAgB;IAChB,gBAAgB;IAChB,wBAAwB;IACxB,cAAc;EAChB;;EAEA;IACE,eAAe;IACf,gBAAgB;IAChB,gBAAgB;IAChB,wBAAwB;IACxB,cAAc;EAChB;;EAEA;IACE,iBAAiB;IACjB,gBAAgB;IAChB,cAAc;EAChB;;EAEA;IACE,iBAAiB;IACjB,gBAAgB;EAClB;;EAEA;IACE,qBAAqB;EACvB;;EAEA;IACE,cAAc;EAChB;;EAEA;IACE,gBAAgB;EAClB;;EAEA;IACE,gBAAgB;IAChB,UAAU;IACV,SAAS;EACX;;EAEA;IACE,mBAAmB;EACrB;;EAEA;IACE,WAAW;EACb","file":"utils.module.css","sourcesContent":[".heading2Xl {\n    font-size: 2.5rem;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n  }\n  \n  .headingXl {\n    font-size: 2rem;\n    line-height: 1.3;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n  }\n  \n  .headingLg {\n    font-size: 1.5rem;\n    line-height: 1.4;\n    margin: 1rem 0;\n  }\n  \n  .headingMd {\n    font-size: 1.2rem;\n    line-height: 1.5;\n  }\n  \n  .borderCircle {\n    border-radius: 9999px;\n  }\n  \n  .colorInherit {\n    color: inherit;\n  }\n  \n  .padding1px {\n    padding-top: 1px;\n  }\n  \n  .list {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n  }\n  \n  .listItem {\n    margin: 0 0 1.25rem;\n  }\n  \n  .lightText {\n    color: #999;\n  }"]}]);
+exports.push([module.i, ".utils_heading2Xl__1I65m {\n    font-size: 2.5rem;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n  }\n  \n  .utils_headingXl__1XecN {\n    font-size: 2rem;\n    line-height: 1.3;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n  }\n  \n  .utils_headingLg__de7p0 {\n    font-size: 1.5rem;\n    line-height: 1.4;\n    margin: 1rem 0;\n  }\n  \n  .utils_headingMd__3de6G {\n    font-size: 1.2rem;\n    line-height: 1.5;\n  }\n  \n  .utils_borderCircle__13qdJ {\n    border-radius: 9999px;\n  }\n  \n  .utils_colorInherit__3Gudf {\n    color: inherit;\n  }\n  \n  .utils_padding1px__oCny8 {\n    padding-top: 1px;\n  }\n  \n  .utils_list__S7_pe {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n  }\n  \n  .utils_listItem__2eJpJ {\n    margin: 0 0 1.25rem;\n  }\n  \n  .utils_lightText__12Ckm {\n    color: #999;\n  }\n\n  .utils_date__2P7Wf::before {\n    content: ' - ';\n  }\n\n  .utils_date__2P7Wf {\n    font-size: 16px;\n    font-weight: 100;\n  }\n\n  .utils_videoContainer__1tO4N {\n    width: 100%;\n    display: flex;\n    justify-content: center;\n  }", "",{"version":3,"sources":["/Users/raykanani/Documents/GitHub/react-playground/styles/utils.module.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;IACjB,gBAAgB;IAChB,gBAAgB;IAChB,wBAAwB;IACxB,cAAc;EAChB;;EAEA;IACE,eAAe;IACf,gBAAgB;IAChB,gBAAgB;IAChB,wBAAwB;IACxB,cAAc;EAChB;;EAEA;IACE,iBAAiB;IACjB,gBAAgB;IAChB,cAAc;EAChB;;EAEA;IACE,iBAAiB;IACjB,gBAAgB;EAClB;;EAEA;IACE,qBAAqB;EACvB;;EAEA;IACE,cAAc;EAChB;;EAEA;IACE,gBAAgB;EAClB;;EAEA;IACE,gBAAgB;IAChB,UAAU;IACV,SAAS;EACX;;EAEA;IACE,mBAAmB;EACrB;;EAEA;IACE,WAAW;EACb;;EAEA;IACE,cAAc;EAChB;;EAEA;IACE,eAAe;IACf,gBAAgB;EAClB;;EAEA;IACE,WAAW;IACX,aAAa;IACb,uBAAuB;EACzB","file":"utils.module.css","sourcesContent":[".heading2Xl {\n    font-size: 2.5rem;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n  }\n  \n  .headingXl {\n    font-size: 2rem;\n    line-height: 1.3;\n    font-weight: 800;\n    letter-spacing: -0.05rem;\n    margin: 1rem 0;\n  }\n  \n  .headingLg {\n    font-size: 1.5rem;\n    line-height: 1.4;\n    margin: 1rem 0;\n  }\n  \n  .headingMd {\n    font-size: 1.2rem;\n    line-height: 1.5;\n  }\n  \n  .borderCircle {\n    border-radius: 9999px;\n  }\n  \n  .colorInherit {\n    color: inherit;\n  }\n  \n  .padding1px {\n    padding-top: 1px;\n  }\n  \n  .list {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n  }\n  \n  .listItem {\n    margin: 0 0 1.25rem;\n  }\n  \n  .lightText {\n    color: #999;\n  }\n\n  .date::before {\n    content: ' - ';\n  }\n\n  .date {\n    font-size: 16px;\n    font-weight: 100;\n  }\n\n  .videoContainer {\n    width: 100%;\n    display: flex;\n    justify-content: center;\n  }"]}]);
 // Exports
 exports.locals = {
 	"heading2Xl": "utils_heading2Xl__1I65m",
@@ -823,7 +843,9 @@ exports.locals = {
 	"padding1px": "utils_padding1px__oCny8",
 	"list": "utils_list__S7_pe",
 	"listItem": "utils_listItem__2eJpJ",
-	"lightText": "utils_lightText__12Ckm"
+	"lightText": "utils_lightText__12Ckm",
+	"date": "utils_date__2P7Wf",
+	"videoContainer": "utils_videoContainer__1tO4N"
 };
 
 /***/ }),

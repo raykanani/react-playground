@@ -182,7 +182,9 @@ const siteTitle = 'Ask Nana Anything';
 
 const Layout = ({
   children,
-  home
+  home,
+  nextQuestion,
+  prevQuestion
 }) => __jsx("div", {
   className: _layout_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.container,
   __self: undefined,
@@ -285,7 +287,7 @@ const Layout = ({
     columnNumber: 15
   }
 }, __jsx("img", {
-  src: "/images/profile.jpg",
+  src: "/images/nana.png",
   className: `${_layout_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.headerImage} ${_styles_utils_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.borderCircle}`,
   alt: name,
   __self: undefined,
@@ -326,29 +328,46 @@ const Layout = ({
     columnNumber: 7
   }
 }, children), !home && __jsx("div", {
-  className: _layout_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.backToHome,
+  className: _layout_module_css__WEBPACK_IMPORTED_MODULE_2___default.a.navigation,
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
     lineNumber: 57,
     columnNumber: 9
   }
-}, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-  href: "/",
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 58,
-    columnNumber: 11
-  }
-}, __jsx("a", {
+}, prevQuestion && prevQuestion !== undefined && prevQuestion.title !== undefined && __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  href: "/posts/[id]",
+  as: `/posts/${prevQuestion.id}`,
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
     lineNumber: 59,
     columnNumber: 13
   }
-}, "\u2190 Back to home"))));
+}, __jsx("a", {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 60,
+    columnNumber: 15
+  }
+}, " \u2190 ", prevQuestion.title)), nextQuestion && nextQuestion !== undefined && nextQuestion.title !== undefined && __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  href: "/posts/[id]",
+  as: `/posts/${nextQuestion.id}`,
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 64,
+    columnNumber: 13
+  }
+}, __jsx("a", {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 65,
+    columnNumber: 15
+  }
+}, nextQuestion.title, " \u2192 "))));
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
 
@@ -367,7 +386,8 @@ module.exports = {
 	"header": "layout_header__2rhWq",
 	"headerImage": "layout_headerImage__2h5On",
 	"headerHomeImage": "layout_headerHomeImage__3qo1_",
-	"backToHome": "layout_backToHome__1vZsp"
+	"backToHome": "layout_backToHome__1vZsp",
+	"navigation": "layout_navigation__3UpwS"
 };
 
 /***/ }),
@@ -2302,7 +2322,9 @@ module.exports = {
 	"padding1px": "utils_padding1px__oCny8",
 	"list": "utils_list__S7_pe",
 	"listItem": "utils_listItem__2eJpJ",
-	"lightText": "utils_lightText__12Ckm"
+	"lightText": "utils_lightText__12Ckm",
+	"date": "utils_date__2P7Wf",
+	"videoContainer": "utils_videoContainer__1tO4N"
 };
 
 /***/ }),
