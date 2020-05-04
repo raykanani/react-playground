@@ -22792,7 +22792,7 @@ function Home(_ref) {
       lineNumber: 16,
       columnNumber: 9
     }
-  }, "Hello. I am Nana. You can ask me any of the questions below.")), __jsx("section", {
+  }, "Hello. I am Nana. Ask me any of the questions below.")), __jsx("section", {
     className: "".concat(_styles_utils_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.headingMd, " ").concat(_styles_utils_module_css__WEBPACK_IMPORTED_MODULE_3___default.a.padding1px),
     __self: this,
     __source: {
