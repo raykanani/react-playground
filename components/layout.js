@@ -56,12 +56,12 @@ const Layout = ({children, home, nextQuestion, prevQuestion}) => (
       {!home && (
         <div className={styles.navigation}>
           {prevQuestion && prevQuestion !== undefined && prevQuestion.title !== undefined && (
-            <Link href="/posts/[id]" as={`/posts/${prevQuestion.id}`}>
+            <Link href="/posts/[id]" as={`/posts/${prevQuestion.id}`} scroll={false}>
               <a> ← {prevQuestion.title}</a>
             </Link>
           )}
           {nextQuestion && nextQuestion !== undefined && nextQuestion.title !== undefined && (
-            <Link href="/posts/[id]" as={`/posts/${nextQuestion.id}`}>
+            <Link href="/posts/[id]" as={`/posts/${nextQuestion.id}`} scroll={false}>
               <a>{nextQuestion.title} → </a>
             </Link>
           )}
