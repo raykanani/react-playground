@@ -30,3 +30,7 @@
     justify-content: space-between;
     margin: 3rem 0 0;
   }
+
+.navigation > a {
+  padding: 5px;
+}
