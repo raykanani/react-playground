@@ -1,6 +1,7 @@
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Date from '../../components/date'
+import QuestionCard from '../../components/questionCard'
 import Head from 'next/head'
 import ReactPlayer from 'react-player'
 import { getSortedPostsData } from '../../lib/posts'
@@ -18,20 +19,13 @@ export default function Post({ postData, prevQuestion, nextQuestion }) {
         </title>
       </Head>
       <article>
-      <div className={utilStyles.questionHeader}>
-        <h1 className={utilStyles.headingXl}>
-          {postData.title}
-          <span className={`${utilStyles.lightText} ${utilStyles.date}`}>
-            <Date dateString={postData.date} />
-          </span>
-        </h1>
-      </div>
       <div className={utilStyles.videoContainer}>
           {postData.videoUrl && 
             <ReactPlayer 
               url={postData.videoUrl}
-              height={500}
-              width={300}
+              height='100%'
+              width='100%'
+              className={utilStyles.videoPlayer}
               playing
               config={{
                 youtube: {
@@ -40,6 +34,11 @@ export default function Post({ postData, prevQuestion, nextQuestion }) {
               }}
             />
           }
+          <div className={utilStyles.overlay}>
+            <div className={utilStyles.questionHeader}>
+              <QuestionCard question={postData.title} date={<Date dateString={postData.date} />}/>
+            </div>
+          </div>
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </article>
