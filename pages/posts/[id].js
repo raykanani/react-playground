@@ -43,7 +43,6 @@ export default function Post({ postData, prevQuestion, nextQuestion }) {
           }
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        <QuestionCard />
     </article>
     </Layout>
   )
