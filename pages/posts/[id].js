@@ -1,6 +1,7 @@
 import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Date from '../../components/date'
+import QuestionCard from '../../components/questionCard'
 import Head from 'next/head'
 import ReactPlayer from 'react-player'
 import { getSortedPostsData } from '../../lib/posts'
@@ -42,6 +43,7 @@ export default function Post({ postData, prevQuestion, nextQuestion }) {
           }
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <QuestionCard />
     </article>
     </Layout>
   )
