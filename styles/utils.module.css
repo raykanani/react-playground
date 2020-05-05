@@ -85,6 +85,6 @@
 
   @media only screen and (max-width: 600px) {
     .overlay {
-      margin: 0;
+      margin: 1%;
     }
   }
