@@ -89,21 +89,20 @@ export async function getStaticPaths() {
 
 export async function getStaticProps( {params} ) {
   const allPostsData = getSortedPostsData()
+  console.log(`params.id: ${params.id}`);
   const postData = await getPostData(params.id)
   let postCache = {};
-  let isCurrentPost = false;
   let nextQuestion = {};
   let prevQuestion = {};
   allPostsData.map(({ id, date, title }) => {
-    if (isCurrentPost) {
+    console.log(`PostCashe.id: ${postCache.id}`);
+    if (postCache.id === params.id) {
       nextQuestion = {
         id,
         title,
       }
-      return;
     }
     if (id === params.id)  {
-      isCurrentPost = true;
       prevQuestion = postCache
     }
     postCache = {
