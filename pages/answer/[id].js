@@ -7,7 +7,6 @@ import QuestionCard from '../../components/questionCard'
 import Head from 'next/head'
 import VideoRecorder from 'react-video-recorder'
 import { getSortedPostsData } from '../../lib/posts'
-import Router from 'next/router'
 
 
 import utilStyles from '../../styles/utils.module.css'
