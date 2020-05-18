@@ -18,7 +18,8 @@ export default function QuestionCard({ question, date, answerProgress}) {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
-      <LinearProgress variant="determinate" value={answerProgress} />
+
+      {answerProgress ? <LinearProgress variant="determinate" value={answerProgress} /> : <div />}
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           {date}
