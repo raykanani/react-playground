@@ -4,6 +4,7 @@ import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Date from '../../components/date'
 import QuestionCard from '../../components/questionCard'
+import Actions from '../../components/videoRecorderActions1'
 import Head from 'next/head'
 import VideoRecorder from 'react-video-recorder'
 import { getSortedPostsData } from '../../lib/posts'
@@ -24,8 +25,8 @@ export default function Post({ postData, prevQuestion, nextQuestion }) {
       <article>
       <div className={utilStyles.videoContainer}>
           <VideoRecorder
-            isOnInitially
             showReplayControls
+            renderActions={Actions}
           />
           <div className={utilStyles.overlay}>
             <div className={utilStyles.questionHeader}>
